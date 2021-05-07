@@ -1,10 +1,15 @@
-import React from "react"
+import React, { ReactNode } from "react"
 import { css } from "@emotion/react"
 import { useStaticQuery, Link, graphql } from "gatsby"
 
 import { rhythm } from "../utils/typography"
-export default function Layout({ children }) {
-  const data = useStaticQuery(
+
+interface LayoutProps {
+  children: ReactNode
+}
+
+export default function Layout({ children }: LayoutProps) {
+  const data: any = useStaticQuery(
     graphql`
       query {
         site {
@@ -15,6 +20,9 @@ export default function Layout({ children }) {
       }
     `
   )
+
+  const siteTitle: string = data.site.siteMetadata?.title || `Title`
+
   return (
     <div
       css={css`
@@ -32,7 +40,7 @@ export default function Layout({ children }) {
             font-style: normal;
           `}
         >
-          {data.site.siteMetadata.title}
+          {siteTitle}
         </h3>
       </Link>
       <Link

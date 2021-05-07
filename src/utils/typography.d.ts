@@ -1,0 +1,1 @@
+export declare const rhythm: (value: number) => string

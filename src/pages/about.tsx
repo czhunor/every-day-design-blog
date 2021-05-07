@@ -1,21 +1,26 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import Header from "../components/header"
+import { SiteMetadataTitleQuery } from "../../graphql-types"
 
-export default function About({ data }) {
+interface AboutProps {
+  data: SiteMetadataTitleQuery
+}
+
+export default function About({ data }: AboutProps) {
   return (
-    <Layout>
-      <h1>About {data.site.siteMetadata.title}</h1>
+    <Header>
+      <h1>About {data.site?.siteMetadata?.title}</h1>
       <p>
         We're the only site running on your computer dedicated to showing the
         best photos and videos of pandas eating lots of food.
       </p>
-    </Layout>
+    </Header>
   )
 }
 
 export const query = graphql`
-  query {
+  query SiteMetadataTitle {
     site {
       siteMetadata {
         title

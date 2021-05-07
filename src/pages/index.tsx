@@ -2,11 +2,16 @@ import React from "react"
 import { css } from "@emotion/react"
 import { Link, graphql } from "gatsby"
 import { rhythm } from "../utils/typography"
-import Layout from "../components/layout"
+import Header from "../components/header"
+import { BlogPostsDescriptionQuery } from "../../graphql-types"
 
-export default function Home({ data }) {
+interface HomeProps {
+  data: BlogPostsDescriptionQuery
+}
+
+export default function Home({ data }: HomeProps) {
   return (
-    <Layout>
+    <Header>
       <div>
         <h1
           css={css`
@@ -20,7 +25,7 @@ export default function Home({ data }) {
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
             <Link
-              to={node.fields.slug}
+              to={node.fields?.slug!}
               css={css`
                 text-decoration: none;
                 color: inherit;
@@ -31,13 +36,13 @@ export default function Home({ data }) {
                   margin-bottom: ${rhythm(1 / 4)};
                 `}
               >
-                {node.frontmatter.title}{" "}
+                {node.frontmatter?.title}{" "}
                 <span
                   css={css`
                     color: #555;
                   `}
                 >
-                  — {node.frontmatter.date}
+                  — {node.frontmatter?.date}
                 </span>
               </h3>
               <p>{node.excerpt}</p>
@@ -45,12 +50,12 @@ export default function Home({ data }) {
           </div>
         ))}
       </div>
-    </Layout>
+    </Header>
   )
 }
 
 export const query = graphql`
-  query {
+  query BlogPostsDescription {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {

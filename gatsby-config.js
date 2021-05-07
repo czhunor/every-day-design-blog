@@ -26,6 +26,13 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-plugin-emotion`,
     {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        fileName: `./graphql-types.ts`,
+        documentPaths: ["./src/**/*.{ts,tsx}"],
+      },
+    },
+    {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
