@@ -1,8 +1,7 @@
 import React, { ReactNode } from "react"
 import { css } from "@emotion/react"
 import { useStaticQuery, Link, graphql } from "gatsby"
-
-import { rhythm } from "../utils/typography"
+import { rhythm } from "../../utils/typography"
 
 interface LayoutProps {
   children: ReactNode

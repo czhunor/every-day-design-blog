@@ -1,6 +1,7 @@
 ---
 title: "My new blog post"
 date: "2021-04-18"
+category: ["test", "something"]
 ---
 
 Do Pandas eat bananas? Check out this short video that shows that yes! pandas do seem to really enjoy bananas!

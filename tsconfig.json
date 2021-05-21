@@ -12,7 +12,17 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "removeComments": false,
-    "types": ["@emotion/react/types/css-prop"]
+    "types": ["@emotion/react/types/css-prop"],
+    "baseUrl": ".", // This must be specified if "paths" is.
+    "paths": {
+      // This mapping is relative to "baseUrl"
+      "#queries/*": ["src/components/queries/*"],
+      "#templates/*": ["src/components/templates/*"],
+      "#views/*": ["src/components/views/*"],
+      "#pages/*": ["src/pages/*"],
+      "#utils/*": ["src/utils/*"],
+      "#base/*": ["*"]
+    }
   },
   "include": ["./src/**/*", "graphql-types.ts"]
 }

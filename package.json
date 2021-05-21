@@ -6,7 +6,7 @@
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
-    "develop": "graphql-codegen --config codegen.yml",
+    "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -22,6 +22,7 @@
     "gatsby": "^3.2.1",
     "gatsby-plugin-emotion": "^6.3.0",
     "gatsby-plugin-graphql-codegen": "^2.7.1",
+    "gatsby-plugin-slug": "^1.1.1",
     "gatsby-plugin-typography": "^3.3.0",
     "gatsby-source-filesystem": "^3.3.0",
     "gatsby-transformer-remark": "^4.0.0",
@@ -33,12 +34,13 @@
     "yarn": "^1.22.10"
   },
   "devDependencies": {
-    "prettier": "2.2.1",
-    "@graphql-codegen/typescript-react-apollo": "2.2.4",
-    "@graphql-codegen/typescript-operations": "1.17.16",
-    "@graphql-codegen/typescript": "1.22.0",
+    "@graphql-codegen/cli": "1.21.4",
     "@graphql-codegen/introspection": "1.18.2",
-    "@graphql-codegen/cli": "1.21.4"
+    "@graphql-codegen/typescript": "1.22.0",
+    "@graphql-codegen/typescript-operations": "1.17.16",
+    "@graphql-codegen/typescript-react-apollo": "2.2.4",
+    "prettier": "2.2.1",
+    "tsconfig-paths-webpack-plugin": "^3.5.1"
   },
   "repository": {
     "type": "git",
